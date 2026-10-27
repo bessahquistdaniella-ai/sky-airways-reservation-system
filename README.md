@@ -1,34 +1,33 @@
-# Sky Airways Reservation System
+# Sky Airways — African & Asian Destinations and Automatic Currency
 
-A responsive airline reservation website with a premium red-and-white visual theme. The layout is inspired by modern airline dashboards and uses original Sky Airways branding.
+This ZIP contains exactly two files: `index.html` and `README.md`.
 
-## Files
-- `index.html` — the complete website, including HTML, CSS, and JavaScript.
-- `README.md` — project and deployment instructions.
+## What's updated
+- Added more African countries and cities, including Ghana, Nigeria, Kenya, South Africa, Egypt, Morocco, Tanzania, Uganda, Rwanda, Ethiopia, Senegal, Côte d’Ivoire, Cameroon, Algeria, Tunisia, Zambia, Botswana, Namibia and Mauritius.
+- Added more Asian countries and cities, including Japan, China, India, Singapore, Malaysia, Indonesia, Thailand, the Philippines, South Korea, Pakistan, Bangladesh, Vietnam, the United Arab Emirates, Qatar, Saudi Arabia, Turkey, Israel, Sri Lanka and Nepal.
+- Added departure-currency mapping for the supported regions. When a departure city is selected, the payment currency field updates automatically to that location's currency. The user can still manually change the currency afterward.
+- Currency is based on the departure location, not the destination. This is a simulated fare display, not a live exchange-rate conversion.
+- Existing cabin class, child-fare, group booking, seat selection and browser-local reservation features are retained.
 
-## Pages
-- **Dashboard:** travel overview, flight/seat/booking counts, and popular destinations.
-- **Find Flights:** search the sample schedule by route and date, then select a seat.
-- **Reservations:** view confirmed bookings and cancel a booking.
-- **Airline App:** airline overview and quick access to booking.
+## Update your hosted website
+1. Extract the ZIP.
+2. Replace `index.html` and `README.md` in your existing GitHub repository.
+3. Commit the changes and wait for Vercel to redeploy.
+4. Test by selecting departure cities such as Accra, Lagos, Nairobi, Johannesburg, Tokyo, Delhi, Dubai, London or Paris and checking the payment currency.
 
-## Run locally
-Keep `index.html` and `README.md` in the same folder and open `index.html` in a modern browser. No framework or build step is required.
-
-## Deploy with GitHub Pages
-1. Create a GitHub repository.
-2. Upload `index.html` and `README.md` to the repository root.
-3. Go to **Settings → Pages**.
-4. Choose **Deploy from a branch**, select `main` and `/(root)`, then save.
-
-## Deploy with Vercel
-1. Push the two files to a GitHub repository.
-2. Import the repository in Vercel.
-3. Select **Other** as the framework preset; no build command is needed.
-
-## Project data
-The website uses JavaScript arrays to keep the sample flights, seat availability, and reservations while the page is open. It is a front-end demonstration and does not connect to an airline, issue real tickets, or process payments. Data resets when the page is refreshed.
+## Demo limitations
+Flight routes and prices are simulated. No real payment is processed. Bookings are saved in the visitor's browser and are not shared between users or devices. Currency selection does not fetch live exchange rates.
 
 
-### Aircraft background
-The supplied aircraft image is embedded directly in `index.html` as the homepage hero background, so the project still contains only two files and does not need a separate image asset.
+## Cabin-class pricing update
+- Economy uses the standard simulated base fare.
+- First Class is priced at 3.5 times the Economy fare, so it is always substantially more expensive for the same simulated route.
+- The cabin selection and fare summary label the First Class premium clearly.
+- Prices are illustrative demo fares, not live airline prices.
+
+
+## Automatic cabin fare preview fix
+- Selecting Economy or First Class now immediately updates a visible fare preview on both the dashboard search form and the Find Flights form.
+- The preview displays the adult fare, child fare, estimated total for the current passenger count, and the departure-based currency.
+- First Class is always priced at 3.5 times the Economy base fare for the same simulated route/date.
+- The preview refreshes when departure, destination, date, passenger count, cabin class or currency changes.
